@@ -1,34 +1,26 @@
+package Day01;
 import java.io.File; 
 import java.io.FileNotFoundException;
 import java.util.Scanner; 
 
-public class Part2 {
+public class Part1 {
     public static void main(String[] args) throws Exception {
         int total = 0;
         try {
-           File myObj = new File("Day01/src/input.txt");
-           Scanner myReader = new Scanner(myObj);
-
-           String[] numbers = {
-                "zero0", "one1", "two2", "three3", "four4", "five5", "six6", "seven7", "eight8", "nine9"
-            };
-            
+            File myObj = new File("AOC/src/Day01/input.txt");
+            Scanner myReader = new Scanner(myObj);
+    
             while (myReader.hasNextLine()) {
               String data = myReader.nextLine();
-              String first = "";
-              String last = "";
-
-              for(int i = numbers.length - 1; i > -1; i--){
-                data = data.replace(numbers[i].substring(0, numbers[i].length()-1),numbers[i].substring(0, numbers[i].length()-1) + numbers[i].charAt(numbers[i].length()- 1) + numbers[i].substring(0, numbers[i].length()-1));
-              }
+              String first = "", last = "";
 
               for(char c : data.toCharArray()){
                 if(Character.isDigit(c)){
                   first = c + "";
                   break;
                 }
-              }
-              
+              }      
+
               for(char c : data.toCharArray()){
                 if(Character.isDigit(c)){
                   last = c + "";
