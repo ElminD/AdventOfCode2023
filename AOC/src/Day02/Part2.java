@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Part1 {
+public class Part2 {
 
     public static int StackToInt(Stack<Character> stack){
         StringBuilder v = new StringBuilder();
@@ -76,9 +76,7 @@ public class Part1 {
                 int green = Integer.parseInt(rgb[1]);
                 int blue = Integer.parseInt(rgb[2]);
 
-                if((red <= 12) && (green <= 13) && (blue <= 14)){
-                    total += i;
-                }
+                total += (red * green * blue);
             }
 
             System.out.println("Total: " + total);
