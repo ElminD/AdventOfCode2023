@@ -21,7 +21,7 @@ public class Part1 {
             for(int row = 0; row < 140; row++) {
                 for(int col = 0; col < 140; col++) {
                     if((engine[row][col] != '.') && (!Character.isDigit(engine[row][col]))) {                 
-                        count += Integer.parseInt(addNumbers(engine, row, col));
+                        count += addNumbers(engine, row, col);
                      }
 
                     System.out.print(engine[row][col]);
@@ -36,12 +36,112 @@ public class Part1 {
           }
   }
 
-    String addNumbers(int[][] engine, int row, int col){
+    int addNumbers(char[][] engine, int row, int col){
         int ogRow = row;
         int ogCol = col;
-        String total = "";
+        int total = 0;
 
+
+        //top left
         if(Character.isDigit(engine[row - 1][col - 1])) {
+            while(Character.isDigit(engine[row][col - 1])) {
+                col--;
+            }
+
+            while(Character.isDigit(engine[row][col])) {
+                total += engine[row][col];
+                col++;
+                engine[row][col] = '.';
+            }
+
+        }
+
+        //top middle
+          if(Character.isDigit(engine[row - 1][col])) {
+            while(Character.isDigit(engine[row][col - 1])) {
+                col--;
+            }
+
+            while(Character.isDigit(engine[row][col])) {
+                total += engine[row][col];
+                col++;
+                engine[row][col] = '.';
+            }
+
+        }
+
+        //top right
+        if(Character.isDigit(engine[row - 1][col + 1])) {
+            while(Character.isDigit(engine[row][col - 1])) {
+                col--;
+            }
+
+            while(Character.isDigit(engine[row][col])) {
+                total += engine[row][col];
+                col++;
+                engine[row][col] = '.';
+            }
+
+        }
+
+        //middle left
+        if(Character.isDigit(engine[row][col - 1])) {
+            while(Character.isDigit(engine[row][col - 1])) {
+                col--;
+            }
+
+            while(Character.isDigit(engine[row][col])) {
+                total += engine[row][col];
+                col++;
+                engine[row][col] = '.';
+            }
+
+        }
+
+        //middle right
+        if(Character.isDigit(engine[row][col + 1])) {
+            while(Character.isDigit(engine[row][col - 1])) {
+                col--;
+            }
+
+            while(Character.isDigit(engine[row][col])) {
+                total += engine[row][col];
+                col++;
+                engine[row][col] = '.';
+            }
+
+        }
+
+        //bottom left
+        if(Character.isDigit(engine[row + 1][col - 1])) {
+            while(Character.isDigit(engine[row][col - 1])) {
+                col--;
+            }
+
+            while(Character.isDigit(engine[row][col])) {
+                total += engine[row][col];
+                col++;
+                engine[row][col] = '.';
+            }
+
+        }
+
+        //bottom middle
+        if(Character.isDigit(engine[row + 1][col])) {
+            while(Character.isDigit(engine[row][col - 1])) {
+                col--;
+            }
+
+            while(Character.isDigit(engine[row][col])) {
+                total += engine[row][col];
+                col++;
+                engine[row][col] = '.';
+            }
+
+        }
+
+        //bottom right
+        if(Character.isDigit(engine[row + 1][col + 1])) {
             while(Character.isDigit(engine[row][col - 1])) {
                 col--;
             }
