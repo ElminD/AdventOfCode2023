@@ -28,6 +28,8 @@ public class Part1 {
                 }
                 System.out.println();
             }
+
+            System.out.println(count);
     
             myReader.close();
           } catch (FileNotFoundException e) {
@@ -37,10 +39,8 @@ public class Part1 {
   }
 
     int addNumbers(char[][] engine, int row, int col){
-        int ogRow = row;
-        int ogCol = col;
+        String number = "";
         int total = 0;
-
 
         //top left
         if(Character.isDigit(engine[row - 1][col - 1])) {
@@ -49,10 +49,12 @@ public class Part1 {
             }
 
             while(Character.isDigit(engine[row][col])) {
-                total += engine[row][col];
+                number += engine[row][col];
                 col++;
                 engine[row][col] = '.';
             }
+
+            total += Integer.parseInt(number);
 
         }
 
@@ -63,11 +65,12 @@ public class Part1 {
             }
 
             while(Character.isDigit(engine[row][col])) {
-                total += engine[row][col];
+                number += engine[row][col];
                 col++;
                 engine[row][col] = '.';
             }
 
+            total += Integer.parseInt(number);
         }
 
         //top right
@@ -77,11 +80,12 @@ public class Part1 {
             }
 
             while(Character.isDigit(engine[row][col])) {
-                total += engine[row][col];
+                number += engine[row][col];
                 col++;
                 engine[row][col] = '.';
             }
 
+            total += Integer.parseInt(number);
         }
 
         //middle left
@@ -91,11 +95,12 @@ public class Part1 {
             }
 
             while(Character.isDigit(engine[row][col])) {
-                total += engine[row][col];
+                number += engine[row][col];
                 col++;
                 engine[row][col] = '.';
             }
 
+            total += Integer.parseInt(number);
         }
 
         //middle right
@@ -105,11 +110,12 @@ public class Part1 {
             }
 
             while(Character.isDigit(engine[row][col])) {
-                total += engine[row][col];
+                number += engine[row][col];
                 col++;
                 engine[row][col] = '.';
             }
 
+            total += Integer.parseInt(number);
         }
 
         //bottom left
@@ -119,11 +125,12 @@ public class Part1 {
             }
 
             while(Character.isDigit(engine[row][col])) {
-                total += engine[row][col];
+                number += engine[row][col];
                 col++;
                 engine[row][col] = '.';
             }
 
+            total += Integer.parseInt(number);
         }
 
         //bottom middle
@@ -133,11 +140,12 @@ public class Part1 {
             }
 
             while(Character.isDigit(engine[row][col])) {
-                total += engine[row][col];
+                number += engine[row][col];
                 col++;
                 engine[row][col] = '.';
             }
 
+            total += Integer.parseInt(number);
         }
 
         //bottom right
@@ -147,11 +155,12 @@ public class Part1 {
             }
 
             while(Character.isDigit(engine[row][col])) {
-                total += engine[row][col];
+                number += engine[row][col];
                 col++;
                 engine[row][col] = '.';
             }
 
+            total += Integer.parseInt(number);
         }
 
         return total;
